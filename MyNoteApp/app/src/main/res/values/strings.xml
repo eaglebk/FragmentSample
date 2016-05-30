@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">MyNoteApp</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="sbText">This is text of sublayout</string>
+
+    <string-array name="names">
+        <item>Petya</item>
+        <item>Vasya</item>
+        <item>Olya</item>
+        <item>Kostya</item>
+        <item>Masha</item>
+        <item>Sergey</item>
+        <item>Igor</item>
+        <item>Anna</item>
+        <item>Boris</item>
+    </string-array>
+</resources>

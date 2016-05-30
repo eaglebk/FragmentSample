@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="welcomeText">I\'m so cool</string>
+    <string name="app_name">CoolDroid</string>
+    <string name="headerTitle">The Cool Droid</string>
+    <string name="messageDontTouch">Don\'t touch the droid!</string>
+
+
+</resources>

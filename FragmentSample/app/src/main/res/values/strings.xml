@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">FragmentSample</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_one_fragment">Hello one fragment</string>
+    <string name="hello_two_fragment">Hello two fragment</string>
+
+    <string-array name="titles">
+        <item>● Осветительные контуры</item>
+        <item>● Сценарии</item>
+    </string-array>
+
+    <string-array name="value_setting">
+        <item>Name</item>
+        <item>Port</item>
+        <item>Paasword</item>
+        <item>Role</item>
+        <item>Name</item>
+        <item>Port</item>
+        <item>Paasword</item>
+        <item>Role</item>
+        <item>Name</item>
+        <item>Port</item>
+        <item>Paasword</item>
+        <item>Role</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

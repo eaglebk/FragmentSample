@@ -1,0 +1,143 @@
+﻿Version=3.8
+IconFile=
+NumberOfModules=0
+Build1=Default,b4a.example
+DoNotOverwriteManifest=False
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.basic4ppc.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="14"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~'End of default text.~\n~
+NumberOfFiles=1
+File1=Layout1.bal
+NumberOfLibraries=1
+Library1=core
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: ColorSpotR
+	#VersionCode: 1
+	#VersionName: 
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: unspecified
+	#CanInstallToExternalStorage: False
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: True
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'These variables can be accessed from all modules.
+
+End Sub
+
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+	'These variables can only be accessed from this module.
+
+	Private Button1 As Button
+	Private Button2 As Button
+	Private Button3 As Button
+	Private Button4 As Button
+	Private Button5 As Button
+	Private Button6 As Button
+	Private Label1 As Label
+	Private Button7 As Button
+	
+	Private Count As Int
+	Private States(6) As Int
+	Private DefaultColors(6) As Int
+	Private SelectedColors(6) As Int
+	Private Buttons(6) As Button
+	
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	'Do not forget to load the layout file created with the visual designer. For example:
+	Activity.LoadLayout("Layout1")
+	InitializeButtons	
+End Sub
+
+Sub InitializeButtons
+	DefaultColors(0) = Colors.ARGB(255, 255, 0, 0) 'Red
+	DefaultColors(1) = Colors.ARGB(255, 0, 255, 0) 'Green
+	DefaultColors(2) = Colors.ARGB(255, 0, 0, 255) 'Blue
+	DefaultColors(3) = Colors.ARGB(255, 255, 255, 0) 'Yellow
+	DefaultColors(4) = Colors.ARGB(255, 255, 0, 255) 'Purple
+	DefaultColors(5) = Colors.ARGB(255, 0, 255, 255) 'Cyan
+	
+	SelectedColors(0) = Colors.ARGB(255, 128, 0, 0) 'Red
+	SelectedColors(1) = Colors.ARGB(255, 0, 128, 0) 'Green
+	SelectedColors(2) = Colors.ARGB(255, 0, 0, 128) 'Blue
+	SelectedColors(3) = Colors.ARGB(255, 128, 128, 0) 'Yellow
+	SelectedColors(4) = Colors.ARGB(255, 128, 0, 128) 'Purple
+	SelectedColors(5) = Colors.ARGB(255, 0, 128, 128) 'Cyan
+	
+	Buttons(0) = Button1
+	Buttons(1) = Button2
+	Buttons(2) = Button3
+	Buttons(3) = Button4
+	Buttons(4) = Button5
+	Buttons(5) = Button6
+	
+	Count = 0
+	
+	For i = 0 To 5
+	  States(i) = 0
+	  Buttons(i).Color = DefaultColors(i)
+	Next
+	
+	Label1.Visible = False
+	Button7.Visible = False
+End Sub
+
+Sub ProcessButton(index As Int)
+	If (States(index) = 0) Then
+		Buttons(index).Color = SelectedColors(index)
+		Count = Count + 1
+		States(index) = 1
+	Else
+		Buttons(index).Color = DefaultColors(index)
+		Count = Count -1
+		States(index) = 0
+	End If
+	
+	If Count = 6 Then
+		Label1.Text = "You Win!"
+		Label1.Visible = True
+		Button7.Visible = True
+	End If
+End Sub
+
+
+
+
+Sub Activity_Resume
+
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+
+
+Sub Button6_Click
+	ProcessButton(5)	
+End Sub
+Sub Button5_Click
+	ProcessButton(4)
+End Sub
+Sub Button4_Click
+	ProcessButton(3)
+End Sub
+Sub Button3_Click
+	ProcessButton(2)
+End Sub
+Sub Button2_Click
+	ProcessButton(1)
+End Sub
+Sub Button1_Click
+	ProcessButton(0)
+End Sub
+Sub Button7_Click
+	InitializeButtons
+End Sub

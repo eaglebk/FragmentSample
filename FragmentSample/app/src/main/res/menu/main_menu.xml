@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/one_fragment"
+        android:icon="@drawable/one"
+        android:orderInCategory="100"
+        android:title="go to one fragment"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/two_fragment"
+        android:icon="@drawable/two"
+        android:orderInCategory="100"
+        android:title="go to second fragment"
+        app:showAsAction="always"/>
+
+</menu>
